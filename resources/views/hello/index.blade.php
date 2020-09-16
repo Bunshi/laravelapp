@@ -7,16 +7,19 @@
     </style>
 </head>
 <body>
-    <h1>Blade/Index</h1>
-    @if ($msg != '')
-    <p>こんにちは、{{$msg}}さん。</p>
-    @else
-    <p>何か書いてください。</p>
-    @endif
-    <form method="POST" action="/hello">
-        @csrf
-        <input type="text" name="msg">
-        <input type="submit">
-    </form>
+    @extends('layouts.helloapp')
+
+    @section('title', 'Inddex')
+
+    @section('menubar')
+        @parent
+        インテックスページ
+    @endsection
+
+    @section('content')
+        <p>ここが本文のコンテンツです。</p>
+        <p>これは、<middleware>google.com</middleware>へのリンクです。</p>
+        <p>これは、<middleware>yahoo.co.jp</middleware>へのリンクです。</p>
+    @endsection
 </body>
 </html>
