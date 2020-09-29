@@ -37,3 +37,8 @@ Route::get('board/add', 'App\Http\Controllers\BoardController@add');
 Route::post('board/add', 'App\Http\Controllers\BoardController@create');
 Route::resource('rest', 'App\Http\Controllers\RestappController');
 Route::get('hello/rest', 'App\Http\Controllers\Hellocontroller@rest');
+Route::get('hello/session', 'App\Http\Controllers\Hellocontroller@ses_get');
+Route::post('hello/session', 'App\Http\Controllers\Hellocontroller@ses_put');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
